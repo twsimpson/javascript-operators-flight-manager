@@ -5,6 +5,12 @@ function Flights() {
      * @returns {number}
      */
     function calculateNumberOfFlights(passengers, capacity) {
+        if (typeof passengers === 'string') {
+            passengers = Number.parseInt(passengers, 10);
+        }
+        if (typeof capacity === 'string') {
+            capacity = Number.parseInt(capacity);
+        }
         if (!Number.isInteger(passengers) || passengers < 0) {
             throw new Error('The number of passengers must be a positive integer value');
         }
